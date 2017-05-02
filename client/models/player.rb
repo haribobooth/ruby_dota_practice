@@ -64,9 +64,12 @@ class Player
 
   def favourite_heroes( id )
     sql = "
-    SELECT heroes.* FROM heroes
+    SELECT favourites.player_id, favourites.hero_id, heroes.name FROM players
     INNER JOIN favourites
-    ON favourites.player_id = #{id}
+    ON favourites.player_id = players.id
+    INNER JOIN heroes
+    ON heroes.id = favourites.hero_id
+    WHERE player_id = #{id};
     "
     return Hero.get_many( sql )
   end
