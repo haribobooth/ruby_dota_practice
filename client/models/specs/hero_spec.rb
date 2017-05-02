@@ -13,7 +13,7 @@ class HeroSpec < MiniTest::Test
   end
 
   def test_can_get_hero_name()
-
+    assert_equal( "Nature's Prophet", @hero.name() )
   end
 
     # def test_example
