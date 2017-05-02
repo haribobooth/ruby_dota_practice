@@ -14,9 +14,9 @@ class Player
   def save()
     sql = "
     INSERT INTO players
-    ( name, team, favourites_heroes )
+    ( name, team, favourite_heroes )
     VALUES
-    ( '#{@name}', '#{@team}', '#{@favourites_heroes}' )
+    ( '#{@name}', '#{@team}', '#{@favourite_heroes}' )
     RETURNING *;
     "
     @id = SqlRunner.run( sql )[0]['id'].to_i()
@@ -26,7 +26,7 @@ class Player
     sql = "
     DELETE FROM players
     WHERE
-    id = #{id;}
+    id = #{id};
     "
     SqlRunner.run( sql )
   end
@@ -35,14 +35,22 @@ class Player
     sql = "
     SELECT * FROM players
     WHERE
-    id = #{id}
+    id = #{id};
     "
     player = SqlRunner( sql )[0]
     return Player.new( player )
   end
 
-  def self.update( details )
-
+  def self.update( player_details )
+    sql = "
+    UPDATE players SET
+    ( name, team, favourite_heroes )
+    =
+    ( '#{player_details['name']}', '#{player_details['team']}', '#{player_details['favourite_heroes']}' )
+    WHERE
+    id = #{player_details['id']};
+    "
+    SqlRunner.run( sql )
   end
 
   def self.all()
