@@ -21,6 +21,24 @@ class Hero
     @id = SqlRunner.run( sql )[0]['id'].to_i()
   end
 
+  def self.delete( id )
+    sql = "DELETE FROM heroes
+    WHERE
+    id = #{id};
+    "
+    SqlRunner.run( sql )
+  end
+
+  def self.find( id )
+    sql = "
+    SELECT * FROM heroes
+    WHERE
+    id = #{id};
+    "
+    hero = SqlRunner( sql )[0]
+    return Hero.new( hero )
+  end
+
   # -- Reuseable methods --
   def self.get_many( sql )
     returned_hero_data = SqlRunner.run( sql )
