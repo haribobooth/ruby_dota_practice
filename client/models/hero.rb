@@ -5,6 +5,7 @@ class Hero
   attr_reader( :name, :description )
 
   def initialize( hero_details )
+    @id = hero_details[ 'id' ].to_i unless hero_details[ 'id' ].nil?
     @name = hero_details[ 'name' ]
     @description = hero_details[ 'description' ]
   end

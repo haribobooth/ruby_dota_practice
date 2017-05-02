@@ -4,10 +4,11 @@ require_relative( './hero.rb' )
 class Player
 
   # attr_reader( :name, :team, :favourite_heroes )
-  attr_reader( :name, :team )
+  attr_reader( :name, :team, :id )
 
 
   def initialize( player_details )
+    @id = player_details[ 'id' ].to_i unless player_details[ 'id' ].nil?
     @name = player_details['name']
     @team = player_details['team']
     # @favourite_heroes = player_details['favourite_heroes']

@@ -3,6 +3,7 @@
   <% for player in @players %>
     <tr>
       <td><%= player.name() %></td>
+      <td><%="<a href='/players/#{player.id()}'>See player</a>"%></td>
     </tr>
   <% end %>
 </table>
