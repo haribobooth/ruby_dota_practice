@@ -4,7 +4,7 @@ class SqlRunner
 
   def self.run( sql )
     begin
-      db = PG.connect( { dbname: 'trevies_tellies', host: 'localhost' } )
+      db = PG.connect( { dbname: 'dota_2', host: 'localhost' } )
       result = db.exec( sql )
     ensure
       db.close()

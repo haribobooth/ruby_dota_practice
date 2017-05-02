@@ -73,7 +73,7 @@ class Player
     "
     return Hero.get_many( sql )
   end
-#
+
 # SELECT victims.name, zombies.name, bitings.infected_on FROM victims
 # INNER JOIN bitings
 # ON bitings.victim_id = victims.id

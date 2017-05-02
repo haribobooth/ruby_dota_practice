@@ -61,7 +61,7 @@ class Hero
   # -- Reuseable methods --
   def self.get_many( sql )
     returned_hero_data = SqlRunner.run( sql )
-    return returned_hero_data.map({ |hero| Hero.new( hero ) })
+    return returned_hero_data.map{ |hero| Hero.new( hero ) }
   end
 
 end
