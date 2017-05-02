@@ -16,6 +16,11 @@ class PlayerSpec < MiniTest::Test
     def test_can_create_player()
       assert_equal( Player, @player.class() )
     end
+
+    def test_can_get_player_name()
+      assert_equal( 'Admiral Bulldog', @player.name() )
+    end
+
     # def test_example
     #   assert_equal(expected, actual)
     # end
