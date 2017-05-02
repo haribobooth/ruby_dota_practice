@@ -2,7 +2,7 @@ require_relative( '../../db/sql_runner.rb' )
 
 class Hero
 
-  attr_reader( :name, :description )
+  attr_reader( :name, :description, :id )
 
   def initialize( hero_details )
     @id = hero_details[ 'id' ].to_i unless hero_details[ 'id' ].nil?

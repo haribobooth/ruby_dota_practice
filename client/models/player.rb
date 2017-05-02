@@ -40,7 +40,7 @@ class Player
     WHERE
     id = #{id};
     "
-    player = SqlRunner( sql )[0]
+    player = SqlRunner.run( sql )[0]
     return Player.new( player )
   end
 
@@ -63,14 +63,14 @@ class Player
     return Player.get_many( sql )
   end
 
-  def favourite_heroes( id )
+  def favourite_heroes()
     sql = "
-    SELECT heroes.name FROM players
+    SELECT heroes.id, heroes.name FROM players
     INNER JOIN favourites
     ON favourites.player_id = players.id
     INNER JOIN heroes
     ON heroes.id = favourites.hero_id
-    WHERE player_id = #{id};
+    WHERE player_id = #{@id};
     "
     return Hero.get_many( sql )
   end
