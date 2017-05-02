@@ -20,6 +20,10 @@ class HeroSpec < MiniTest::Test
     assert_equal( "Nature's Prophet", @hero.name() )
   end
 
+  def test_can_get_hero_description()
+    assert_equal( "Ratting expert", @hero.description() )
+  end
+
     # def test_example
     #   assert_equal(expected, actual)
     # end
