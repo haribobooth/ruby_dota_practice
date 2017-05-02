@@ -9,12 +9,12 @@ class PlayerSpec < MiniTest::Test
     @player = Player.new({
       "name" => 'Admiral Bulldog',
       "team" => 'Alliance',
-      "hero" => "Nature's Prophet"
+      "favourite_hero" => "Nature's Prophet"
       })
     end
 
     def test_can_create_player()
-      assert_equal( Player, player.class() )
+      assert_equal( Player, @player.class() )
     end
     # def test_example
     #   assert_equal(expected, actual)
