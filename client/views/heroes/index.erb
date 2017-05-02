@@ -3,7 +3,7 @@
   <% for hero in @heroes %>
     <tr>
       <td><%= hero.name() %></td>
-      <td><%="<a href='/heroes/#{hero.id()}'>See hero</a>"%></td>
+      <td><a href='/heroes/<%= hero.id() %>'>See hero</a></td>
     </tr>
   <% end %>
 </table>

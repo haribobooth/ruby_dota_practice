@@ -14,3 +14,8 @@ get( '/players/:id' ) do
   @favourite_heroes = @player.favourite_heroes()
   erb( :"players/details" )
 end
+
+post( '/players/:id/delete' ) do
+  Player.delete( params[ 'id' ].to_i )
+  redirect to( '/players' )
+end
