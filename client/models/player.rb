@@ -1,4 +1,5 @@
 require_relative( '../../db/sql_runner.rb' )
+require_relative( './hero.rb' )
 
 class Player
 
@@ -61,8 +62,20 @@ class Player
     return Player.get_many( sql )
   end
 
-  def favourite_heroes
+  def favourite_heroes( id )
+    sql = "
+    SELECT heroes.* FROM heroes
+    INNER JOIN favourites
+    ON favourites.player_id = #{id}
+    "
+    return Hero.get_many( sql )
   end
+#
+# SELECT victims.name, zombies.name, bitings.infected_on FROM victims
+# INNER JOIN bitings
+# ON bitings.victim_id = victims.id
+# INNER JOIN zombies
+# ON zombies.id = bitings.zombie_id;
 
 # -- Reuseable methods --
   def self.get_many( sql )
