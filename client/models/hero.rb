@@ -48,6 +48,14 @@ class Hero
     WHERE
     id = #{hero_details['id']};
     "
+    SqlRunner.run( sql )
+  end
+
+  def self.all()
+    sql = "
+    SELECT * FROM heroes;
+    "
+    return Hero.get_many( sql )
   end
 
   # -- Reuseable methods --
