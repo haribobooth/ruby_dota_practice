@@ -5,10 +5,10 @@
     <tr>
       <td><%= hero.name() %></td>
       <td><a href='/heroes/<%= hero.id() %>'>See Hero</a></td>
-    </tr>
   <% end %>
 
   <td><form action="/players/<%= @player.id() %>/delete" method="post">
     <input class="submit_button" type="submit" value="Delete">
   </form></td>
+</tr>
 </table>
