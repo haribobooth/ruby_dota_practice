@@ -54,7 +54,10 @@ class Player
   end
 
   def self.all()
-
+    sql = "
+    SELECT * FROM players;
+    "
+    return Player.get_many( sql )
   end
 
 # -- Reuseable methods --
