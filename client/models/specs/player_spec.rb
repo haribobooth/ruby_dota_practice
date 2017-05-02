@@ -6,13 +6,17 @@ require_relative( '../player.rb' )
 class PlayerSpec < MiniTest::Test
 
   def setup()
+    # @player = Player.new({
+    #   "name" => 'Admiral Bulldog',
+    #   "team" => 'Alliance',
+    #   "favourite_heroes" => [
+    #     "Nature's Prophet",
+    #     "Magnus"
+    #   ]})
     @player = Player.new({
       "name" => 'Admiral Bulldog',
       "team" => 'Alliance',
-      "favourite_heroes" => [
-        "Nature's Prophet",
-        "Magnus"
-      ]})
+      })
     end
 
     def test_can_create_player()
@@ -27,9 +31,9 @@ class PlayerSpec < MiniTest::Test
       assert_equal( 'Alliance', @player.team() )
     end
 
-    def test_can_get_player_favourite_heroes()
-      assert_equal( ["Nature's Prophet", "Magnus"], @player.favourite_heroes() )
-    end
+    # def test_can_get_player_favourite_heroes()
+    #   assert_equal( ["Nature's Prophet", "Magnus"], @player.favourite_heroes() )
+    # end
 
     # def test_example
     #   assert_equal(expected, actual)

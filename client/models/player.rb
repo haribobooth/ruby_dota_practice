@@ -2,13 +2,14 @@ require_relative( '../../db/sql_runner.rb' )
 
 class Player
 
-  attr_reader( :name, :team, :favourite_heroes )
+  # attr_reader( :name, :team, :favourite_heroes )
+  attr_reader( :name, :team )
 
 
   def initialize( player_details )
     @name = player_details['name']
     @team = player_details['team']
-    @favourite_heroes = player_details['favourite_heroes']
+    # @favourite_heroes = player_details['favourite_heroes']
   end
 
   def save()
@@ -60,10 +61,13 @@ class Player
     return Player.get_many( sql )
   end
 
+  def favourite_heroes
+  end
+
 # -- Reuseable methods --
   def self.get_many( sql )
     returned_player_data = SqlRunner.run( sql )
-    return returned_player_data.map({ |player| Player.new( player ) })
+    return returned_player_data.map{ |player| Player.new( player ) }
   end
 
 end
