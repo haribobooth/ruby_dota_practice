@@ -4,9 +4,9 @@ class Hero
 
   attr_reader( :name, :description )
 
-  def initialize( hero_information )
-    @name = hero_information[ 'name' ]
-    @description = hero_information[ 'description' ]
+  def initialize( hero_details )
+    @name = hero_details[ 'name' ]
+    @description = hero_details[ 'description' ]
   end
 
   def save()
@@ -37,6 +37,17 @@ class Hero
     "
     hero = SqlRunner( sql )[0]
     return Hero.new( hero )
+  end
+
+  def self.update( hero_details )
+    sql = "
+    UPDATE heroes SET
+    ( name, description )
+    =
+    ( '#{hero_details['name']}', '#{hero_details['description']}' )
+    WHERE
+    id = #{hero_details['id']};
+    "
   end
 
   # -- Reuseable methods --
