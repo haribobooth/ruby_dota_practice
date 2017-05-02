@@ -9,8 +9,10 @@ class PlayerSpec < MiniTest::Test
     @player = Player.new({
       "name" => 'Admiral Bulldog',
       "team" => 'Alliance',
-      "favourite_hero" => "Nature's Prophet"
-      })
+      "favourite_heroes" => [
+        "Nature's Prophet",
+        "Magnus"
+      ]})
     end
 
     def test_can_create_player()
