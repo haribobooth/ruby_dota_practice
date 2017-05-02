@@ -1,6 +1,6 @@
 class Player
 
-  attr_reader( :name, :team )
+  attr_reader( :name, :team, :favourite_heroes )
 
 
   def initialize( player_information )
