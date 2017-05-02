@@ -36,7 +36,7 @@ class Hero
     WHERE
     id = #{id};
     "
-    hero = SqlRunner( sql )[0]
+    hero = SqlRunner.run( sql )[0]
     return Hero.new( hero )
   end
 
