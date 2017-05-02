@@ -27,6 +27,10 @@ class PlayerSpec < MiniTest::Test
       assert_equal( 'Alliance', @player.team() )
     end
 
+    def test_can_get_player_favourite_heroes()
+      assert_equal( ["Nature's Prophet", "Magnus"], @player.favourite_heroes() )
+    end
+
     # def test_example
     #   assert_equal(expected, actual)
     # end
