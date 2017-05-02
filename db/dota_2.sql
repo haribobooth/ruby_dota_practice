@@ -10,7 +10,8 @@ CREATE TABLE players(
 
 CREATE TABLE heroes(
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  description VARCHAR(255)
 );
 
 CREATE TABLE favourites(
