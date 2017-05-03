@@ -1,8 +1,87 @@
-body {
+html, body {
   text-align: center;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+main {
+  width: 50%;
+  height: 800px;
+  margin: 0 auto;
+  background-color: rgba(150, 150, 150, 0.3)
+}
+
+@font-face {
+  font-family: 'Trajan Bold';
+  src: url('fonts/TrajanBold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/TrajanBold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/TrajanBold.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
+body {
+  background-image: url('http://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/570/0ff7a6cf3e3978e9c63a596115b7f7b1b5c05a9b.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #CBCBCB;
+  font-family: "Trajan Bold", serif;
+  font-weight: 100;
+}
+
+img {
+  width: 20%;
+  margin-top: 15px;
+}
+
+h1 {
+  font-weight: 100;
+  letter-spacing: 3px;
+}
+
+h2,h3,h4,h5,h6 {
+  margin-bottom: 5px
+}
+
+h3,h4,h5,h6 {
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #5B5B5B;
+  background-color: #CBCBCB;
+  padding: 1px;
+  margin-top: 10px;
+}
+
+a:hover {
+  color: #CBCBCB;
+  background-color: #5B5B5B;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.table-wrapper {
+  background-color: rgba(10, 10, 10, 0.3);
+  height: 200px;
+  width: 70%;
+  margin: 0 auto;
 }
 
 table {
   margin: 0 auto;
   text-align: center;
+  /*height: 250px;*/
+  max-height: 200px;
+  overflow-x: scroll;
+  /*background-color: rgba(10, 10, 10, 0.3);*/
+}
+
+tr, td {
+  height: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }

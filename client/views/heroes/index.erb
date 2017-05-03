@@ -1,9 +1,11 @@
 <h2>Heroes</h2>
-<table>
-  <% for hero in @heroes %>
+<div class="table-wrapper">
+  <table>
+    <% for hero in @heroes %>
     <tr>
       <td><%= hero.name() %></td>
       <td><a href='/heroes/<%= hero.id() %>'>See hero</a></td>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
+</div>

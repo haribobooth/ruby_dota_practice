@@ -1,10 +1,12 @@
 <h2>Players</h2>
-<table>
-  <% for player in @players %>
+<div class="table-wrapper">
+  <table>
+    <% for player in @players %>
     <tr>
       <td><%= player.name() %></td>
       <td><a href='/players/<%= player.id() %>'>See player</a></td>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
+</div>
 <a href='/players/new'>New player</a>
