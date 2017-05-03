@@ -75,6 +75,25 @@ class Player
     return Hero.get_many( sql )
   end
 
+  def self.add_favourite( player_id, hero_id )
+    sql = "
+    INSERT INTO favourites
+    ( player_id, hero_id )
+    VALUES
+    ( #{player_id}, #{hero_id} );
+    "
+    SqlRunner.run( sql )
+  end
+
+  def self.remove_favourite( player_id, hero_id )
+    sql = "
+    DELETE FROM favourites
+    WHERE
+    player_id = #{player_id} AND hero_id = #{hero_id};
+    "
+    SqlRunner.run( sql )
+  end
+
 # -- Reuseable methods --
   def self.get_many( sql )
     returned_player_data = SqlRunner.run( sql )

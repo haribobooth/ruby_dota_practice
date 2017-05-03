@@ -3,15 +3,29 @@
 <h4><%= @player.team() %></h4>
 <table>
   <% for hero in @favourite_heroes %>
-    <tr>
-      <td><%= hero.name() %></td>
-      <td><a href='/heroes/<%= hero.id() %>'>See Hero</a></td>
-  <% end %>
+  <tr>
+    <td><%= hero.name() %></td>
+    <td><a href='/heroes/<%= hero.id() %>'>See Hero</a></td>
+    <td><form action="/players/<%= @player.id() %>/favourites/delete" method="post">
+      <input hidden name="hero_id" type="text" value="<%= hero.id() %>"/>
+      <input class="submit_button" type="submit" value="Delete"/>
+    </form></td>
+    <% end %>
+  </tr>
+</table>
 
   <a href='/players/<%= @player.id() %>/edit'>Edit player</a>
+
+  <form action="/players/<%= @player.id() %>/favourites" method="post">
+    <select name="hero_id">
+      <% for hero in @heroes %>
+        <option value="<%= hero.id() %>"><%= hero.name() %></option>
+      <%end%>
+    </select>
+
+    <input class="submit_button" type="submit" value="Add favourite"/>
+  </form
 
   <td><form action="/players/<%= @player.id() %>/delete" method="post">
     <input class="submit_button" type="submit" value="Delete">
   </form></td>
-</tr>
-</table>
