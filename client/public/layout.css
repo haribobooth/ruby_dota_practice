@@ -47,17 +47,39 @@ h3,h4,h5,h6 {
   margin-top: 5px;
 }
 
-a {
+a, input[type='submit'] {
   text-decoration: none;
   color: #5B5B5B;
   background-color: #CBCBCB;
   padding: 1px;
   margin-top: 10px;
+  font-family: "Trajan Bold", serif;
+  font-weight: 100;
 }
 
-a:hover {
+input[type='submit'] {
+  height: 100%;
+  padding: 0px;
+  margin-top: 0;
+  border: none;
+}
+
+a:hover, input[type='submit']:hover, .favourite-delete-form:hover {
   color: #CBCBCB;
   background-color: #5B5B5B;
+  cursor: pointer;
+}
+
+.favourite-delete-form {
+  height: 22px;
+  /*padding-top: 3px; */
+  padding-bottom: 1px;
+  background-color: #CBCBCB;
+}
+
+.favourite-delete-form input {
+  font-size: 1em;
+  width: 100%;
 }
 
 a:visited {
@@ -76,6 +98,7 @@ table {
   text-align: center;
   /*height: 250px;*/
   max-height: 200px;
+  width: 100%;
   overflow-x: scroll;
   /*background-color: rgba(10, 10, 10, 0.3);*/
 }

@@ -7,7 +7,7 @@
     <tr>
       <td><%= hero.name() %></td>
       <td><a href='/heroes/<%= hero.id() %>'>See Hero</a></td>
-      <td><form action="/players/<%= @player.id() %>/favourites/delete" method="post">
+      <td><form class='favourite-delete-form' action="/players/<%= @player.id() %>/favourites/delete" method="post">
         <input hidden name="hero_id" type="text" value="<%= hero.id() %>"/>
         <input class="submit_button" type="submit" value="Delete"/>
       </form></td>
