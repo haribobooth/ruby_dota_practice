@@ -55,6 +55,7 @@ a, input[type='submit'] {
   margin-top: 10px;
   font-family: "Trajan Bold", serif;
   font-weight: 100;
+  transition-duration: 0.2s;
 }
 
 input[type='submit'] {
@@ -75,6 +76,7 @@ a:hover, input[type='submit']:hover, .favourite-delete-form:hover {
   /*padding-top: 3px; */
   padding-bottom: 1px;
   background-color: #CBCBCB;
+  transition-duration: 0.2s;
 }
 
 .favourite-delete-form input {
