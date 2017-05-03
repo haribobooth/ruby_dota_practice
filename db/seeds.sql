@@ -1,6 +1,9 @@
 INSERT INTO players ( name, team ) VALUES ( 'Dendi', 'Navi' );
 INSERT INTO players ( name, team ) VALUES ( 'Admiral Bulldog', 'Alliance' );
 INSERT INTO players ( name, team ) VALUES ( 'N0tail', 'OG' );
+INSERT INTO players ( name, team ) VALUES ( 'Loda', 'Alliance' );
+INSERT INTO players ( name, team ) VALUES ( 'EGM', 'Alliance' );
+INSERT INTO players ( name, team ) VALUES ( 'Chuan', 'Liquid' );
 
 INSERT INTO heroes ( name, description ) VALUES ( 'Pudge', 'Drops some fat stacks' );
 INSERT INTO heroes ( name, description ) VALUES ( 'Natures Prophet', 'Ratting expert' );
@@ -22,3 +25,6 @@ INSERT INTO favourites ( player_id, hero_id ) VALUES ( 1, 1 );
 INSERT INTO favourites ( player_id, hero_id ) VALUES ( 2, 2 );
 INSERT INTO favourites ( player_id, hero_id ) VALUES ( 3, 3 );
 INSERT INTO favourites ( player_id, hero_id ) VALUES ( 3, 4 );
+INSERT INTO favourites ( player_id, hero_id ) VALUES ( 4, 14 );
+INSERT INTO favourites ( player_id, hero_id ) VALUES ( 5, 6 );
+INSERT INTO favourites ( player_id, hero_id ) VALUES ( 6, 12 ); 
