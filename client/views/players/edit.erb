@@ -1,0 +1,18 @@
+<div id='edit-player-form' class='edit-form'>
+  <h2>Edit player</h2>
+
+  <form action='/players/<%= @player.id() %>/update' method='POST'>
+    <label class='edit-form-input-label'>
+      Player name:
+      <input type='text' name='name' class='edit-form-input' value='<%= @player.name() %>'/>
+    </label>
+
+    <label class='edit-form-input-label'>
+      Player team:
+      <input type='text' name='team' class='edit-form-input' value='<%= @player.team() %>'/>
+    </label>
+
+    <input type='submit' value='Update player' class='edit-form-submit-input'/>
+  </form>
+
+</div>

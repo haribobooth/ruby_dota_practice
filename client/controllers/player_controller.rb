@@ -13,6 +13,11 @@ get( '/players/new') do
   erb( :"players/new" )
 end
 
+get( '/players/:id/edit' ) do
+  @player = Player.find( params[ 'id' ].to_i() )
+  erb( :"players/edit" )
+end
+
 get( '/players/:id' ) do
   @player = Player.find( params[ 'id' ].to_i() )
   @favourite_heroes = @player.favourite_heroes()
@@ -25,6 +30,11 @@ post('/players') do
 end
 
 post( '/players/:id/delete' ) do
-  Player.delete( params[ 'id' ].to_i )
+  Player.delete( params[ 'id' ].to_i() )
   redirect to( '/players' )
+end
+
+post( '/players/:id/update' ) do
+  Player.update( params )
+  redirect to( '/players/' + params[ 'id' ].to_s() )
 end

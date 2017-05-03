@@ -11,7 +11,6 @@ class Player
     @id = player_details[ 'id' ].to_i unless player_details[ 'id' ].nil?
     @name = player_details['name']
     @team = player_details['team']
-    @favourite_heroes = []
     # @favourite_heroes = player_details['favourite_heroes']
   end
 
@@ -48,9 +47,9 @@ class Player
   def self.update( player_details )
     sql = "
     UPDATE players SET
-    ( name, team, favourite_heroes )
+    ( name, team )
     =
-    ( '#{player_details['name']}', '#{player_details['team']}', '#{player_details['favourite_heroes']}' )
+    ( '#{player_details['name']}', '#{player_details['team']}' )
     WHERE
     id = #{player_details['id']};
     "
