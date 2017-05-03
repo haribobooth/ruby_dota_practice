@@ -91,6 +91,7 @@ a:visited {
   height: 200px;
   width: 70%;
   margin: 0 auto;
+  overflow-x: scroll;
 }
 
 table {
@@ -99,7 +100,6 @@ table {
   /*height: 250px;*/
   max-height: 200px;
   width: 100%;
-  overflow-x: scroll;
   /*background-color: rgba(10, 10, 10, 0.3);*/
 }
 
