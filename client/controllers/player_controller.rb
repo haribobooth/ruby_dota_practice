@@ -9,10 +9,19 @@ get( '/players' ) do
   erb( :"players/index" )
 end
 
+get( '/players/new') do
+  erb( :"players/new" )
+end
+
 get( '/players/:id' ) do
   @player = Player.find( params[ 'id' ].to_i() )
   @favourite_heroes = @player.favourite_heroes()
   erb( :"players/details" )
+end
+
+post('/players') do
+  Player.new( params ).save()
+  redirect to( '/players' )
 end
 
 post( '/players/:id/delete' ) do

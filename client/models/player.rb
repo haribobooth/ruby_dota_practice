@@ -11,15 +11,16 @@ class Player
     @id = player_details[ 'id' ].to_i unless player_details[ 'id' ].nil?
     @name = player_details['name']
     @team = player_details['team']
+    @favourite_heroes = []
     # @favourite_heroes = player_details['favourite_heroes']
   end
 
   def save()
     sql = "
     INSERT INTO players
-    ( name, team, favourite_heroes )
+    ( name, team )
     VALUES
-    ( '#{@name}', '#{@team}', '#{@favourite_heroes}' )
+    ( '#{@name}', '#{@team}' )
     RETURNING *;
     "
     @id = SqlRunner.run( sql )[0]['id'].to_i()
