@@ -6,7 +6,7 @@
     <% for hero in @favourite_heroes %>
     <tr>
       <td><%= hero.name() %></td>
-      <td><a href='/heroes/<%= hero.id() %>'>See Hero</a></td>
+      <td><a href='/heroes/<%= hero.id() %>/from/<%= @player.id() %>'>See Hero</a></td>
       <td><form class='favourite-delete-form' action="/players/<%= @player.id() %>/favourites/delete" method="post">
         <input hidden name="hero_id" type="text" value="<%= hero.id() %>"/>
         <input class="submit_button" type="submit" value="Delete"/>

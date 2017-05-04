@@ -9,7 +9,8 @@ get( '/heroes' ) do
   erb( :"heroes/index" )
 end
 
-get( '/heroes/:id' ) do
+get( '/heroes/:id/from/:player_id' ) do
   @hero = Hero.find( params[ 'id' ].to_i() )
+  @previous_id = params[ 'player_id' ].to_i()
   erb( :"heroes/details" )
 end
