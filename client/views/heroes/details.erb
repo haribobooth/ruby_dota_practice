@@ -1,6 +1,4 @@
 <h2>Hero Details</h2>
 <h3><%= @hero.name() %></h3>
 <p><%= @hero.description() %></p>
-<% if(@previous_id) %>
-<a href='/players/<%= @previous_id %>'>Back</a>
-<% end %>
+<a href=<%= @previous_url %>>Back</a>
