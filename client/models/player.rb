@@ -74,11 +74,11 @@ class Player
   # linked heroes, map them to an array, then return the array of heroes
   def favourite_heroes()
     sql = "
-    SELECT heroes.id, heroes.name FROM players
-    INNER JOIN favourites
-    ON favourites.player_id = players.id
-    INNER JOIN heroes
-    ON heroes.id = favourites.hero_id
+    SELECT h.id, h.name FROM players p
+    INNER JOIN favourites f
+    ON f.player_id = p.id
+    INNER JOIN heroes h
+    ON h.id = f.hero_id
     WHERE player_id = #{@id};
     "
     return Hero.get_many( sql )
